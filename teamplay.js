@@ -501,16 +501,16 @@ function draw() {
   }
   
   //현성
-  console.log(scene);
-  console.log(finalStopped);
-  console.log(creditTimerStarted);
-  if (scene === 3 && finalStopped && !creditTimerStarted) {
-    creditTimerStarted = true;
-    setTimeout(() => {
-      showCredits = true;
+  // console.log(scene);
+  // console.log(finalStopped);
+  // console.log(creditTimerStarted);
+  // if (scene === 3 && finalStopped && !creditTimerStarted) {
+  //   creditTimerStarted = true;
+  //   setTimeout(() => {
+  //     showCredits = true;
       
-    }, 2000); // 2초 후 실행
-  }
+  //   }, 2000); // 2초 후 실행
+  // }
 }
 
 function drawStickMan(x, y) {
@@ -2145,12 +2145,12 @@ rect(x, y, w, h, 8);
 
 }
 
-if (showCredits) {
-  drawEndingCredits();
-  return;
-}
+// if (showCredits) {
+//   drawEndingCredits();
+//   return;
+// }
 
-function drawEndingCredits() {
-  rectMode(CORNER);
-  rect(0, 0, width, height);
-}
+// function drawEndingCredits() {
+//   rectMode(CORNER);
+//   rect(0, 0, width, height);
+// }
