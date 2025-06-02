@@ -116,10 +116,10 @@ let showCredits = false;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   startButton = createButton("START");
-startButton.position(windowWidth / 2 - 40, windowHeight / 2 + 40);
-startButton.size(80, 40);
-startButton.style("font-size", "18px");
-startButton.mousePressed(() => {
+  startButton.position(windowWidth / 2 - 40, windowHeight / 2 + 40);
+  startButton.size(80, 40);
+  startButton.style("font-size", "18px");
+  startButton.mousePressed(() => {
   showIntro = false;
   startButton.hide(); // 버튼 숨기기
 });
@@ -460,6 +460,18 @@ function draw() {
   // 중앙 멈춤 후 복통 호소
   if (finalStopped) {
     drawStomachPain(finalX, finalY);
+    if (!creditTimerStarted) {
+      creditTimerStarted = true;
+      setTimeout(() => {
+        showCredits = true;
+      }, 2000); // 2초 후 실행
+    }
+    
+  }
+  if (showCredits) {
+  
+  drawEndingCredits();
+  return;
   }
 
   return;
@@ -584,6 +596,13 @@ function drawBackground() {
     ellipse(t.x + width * 0.007, foliageY, width * 0.05, height * 0.08);
     ellipse(t.x - width * 0.007, foliageY + height * 0.015, width * 0.045, height * 0.07);
     ellipse(t.x + width * 0.018, foliageY + height * 0.015, width * 0.045, height * 0.07);
+
+    // 조작키 설명
+    fill(0, 120);
+    textAlign(LEFT, TOP);
+    textSize(18);
+    text("이동: A / D", 30, height * 0.62);
+    text("다음 장면: 화면 끝까지 이동", 30, height * 0.62 + 28);
   }
 
   
@@ -753,6 +772,13 @@ function drawBackground2() {
 
   drawFactories();
 
+  //인터랙션 조작키 설명
+  fill(255);
+  textAlign(LEFT, TOP);
+  textSize(18);
+  text("연기흡수: 스페이스 바", 30, height * 0.62);
+  text("다음 장면: 화면 끝까지 이동", 30, height * 0.62 + 28);
+  
   pop();
 }
 
@@ -2145,12 +2171,11 @@ rect(x, y, w, h, 8);
 
 }
 
-// if (showCredits) {
-//   drawEndingCredits();
-//   return;
-// }
 
-// function drawEndingCredits() {
-//   rectMode(CORNER);
-//   rect(0, 0, width, height);
-// }
+
+function drawEndingCredits() {
+  rectMode(CORNER);
+  fill (0, 0, 0);
+  rect(0, 0, width, height);
+  text("Thank you for playing!", width / 2, height / 2 - 20);
+}
