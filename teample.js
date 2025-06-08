@@ -127,7 +127,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   startButton = createButton("START");
-  startButton.position(windowWidth / 2 - 40, windowHeight / 2 + 40);
+  startButton.position(windowWidth / 2 - 40, windowHeight / 2 + 90);
   startButton.size(80, 40);
   startButton.style("font-size", "18px");
   startButton.mousePressed(() => {
@@ -224,7 +224,7 @@ function draw() {
     textSize(20);
     text("유승호, 손현성, 지재상", width / 2, height / 2);
     textSize(16);
-    text("조작법: A/D, 마우스 클릭, 마우스 이동, 스페이스 바", width / 2, height / 2 + 110);
+    text("조작법: A/D, 마우스 클릭, 마우스 이동, 스페이스 바", width / 2, height / 2 + 40);
     return; // 이후 코드 실행하지 않음
   }
   
