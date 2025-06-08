@@ -224,7 +224,7 @@ function draw() {
     textSize(20);
     text("유승호, 손현성, 지재상", width / 2, height / 2);
     textSize(16);
-    text("조작법: A/D, 마우스 클릭, 마우스 이동, 스페이스 바", width / 2, height / 2 + 90);
+    text("조작법: A/D, 마우스 클릭, 마우스 이동, 스페이스 바", width / 2, height / 2 + 110);
     return; // 이후 코드 실행하지 않음
   }
   
