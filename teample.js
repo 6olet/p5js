@@ -2289,6 +2289,6 @@ function drawEndingCredits() {
     text("이번 코딩을 통해 순서대로 코드를 구조화하는 방법을 많이 배울 수 있었고,", width / 2, height / 2);
     text("기능 간 데이터 흐름을 명확히 설계하고, 각 장면을 연결하는 방법을 세세히 알 수 있어 좋았고,", width / 2, height / 2 + 30);
     text("환경문제에 대해 다시 생각해볼 수 있는 계기가 되서 보람깊었습니다.", width / 2, height / 2 + 60);
-    text("AI 사용비율 95%", width / 2, height / 2 + 90);
+    text("AI 사용비율 85%", width / 2, height / 2 + 90);
   }
 }
