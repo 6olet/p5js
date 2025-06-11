@@ -404,10 +404,7 @@ function draw() {
     updateCarSmoke();
     drawStickmanInCar(x, y);
   }
-  else if (scene3 == true) {
-    drawBackground3();
-    drawStickMan(x, y);
-  }
+  
   
   
   if (keyIsDown(65)) { // A
@@ -453,9 +450,10 @@ function draw() {
   //여기서부터 재상 코드
   // --- 씬3 & 먹기 끝난 상태: A/D로 움직이다가 캔버스 중앙에서 정지 ---
   if (scene3 === true) {
+  y = height * 0.77 - 20;
   if (scene === 3 && hasEaten) {
   drawBackground3();
-
+  
   
   // 움직임 허용 중일 때만 A/D 처리
   if (finalCanMove && !finalStopped) {
@@ -2054,9 +2052,12 @@ drawTreeStump(210, height * 0.6 + 120);
 
 const stumpPositions = [
 
-[410, 530], [30, 520], [560, 520],
-
-[700, 460], [620, 580], [450, 430]
+[width * 0.34, height * 0.74],
+[width * 0.025, height * 0.725],
+[width * 0.465, height * 0.725],
+[width * 0.583, height * 0.64],
+[width * 0.516, height * 0.775],
+[width * 0.375, height * 0.59]
 
 ];
 
@@ -2068,7 +2069,7 @@ let safeY = constrain(y, height * 0.5, height - 40);
 
 drawTreeStump(safeX, safeY);
 
-if (x === 410 && y === 530 && !holdingAxe) {
+if (x === width * 0.34 && y === height * 0.74 && !holdingAxe) {
 
 axeX = safeX + 40;
 
